@@ -8,13 +8,31 @@ html, body {
 table {
 	height: 98%;
 	width:100%;
-	padding:1% 0;
+	padding:0;
 	background:#ffffff;
-
+    box-shadow: 0 0 1px black, 0 0 3px black, 0 0 9px black, 0 0 81px black;
 }
 td {
 	background: white;
-	box-shadow: 0 0 5px #FF8888;
+	box-shadow: 0 0 .5px #FF8888, 0 0 .5px #FF8888, 0 0 1px #FF8888, 0 0 1px #FF8888;
 	height:100%;
+
+}
+button {
+    outline: none;
+	margin:0;
+	border:none;
+	
+}
+.navToggleBtn {
+	display: inline-flex;
+
+	display: inline-block;
+  transform: scale(1.86,1.15);
+  transform-origin: 0 0;
+	width:100%;
+}
+#dvContain2 {
+	height: 100%;
 
 }
