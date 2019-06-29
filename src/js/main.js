@@ -1,30 +1,41 @@
-var myUI;
+var myUI, clusterNames;
+
+var bean = "<button class='beaners'>➕</>";
+
+clusterNames = [
+	"display",bean,"as","separate","items","as","different rows","for the hell ovit","we","can","this","work","correctly","Jason Graziano"
+];
 
 myUI = {
 	init: () => {
         myUI.loadout();
 	},
 	loadout: () => {
-		var tds = byTag("td");
+		var header = createEle("header"),
+			container = createEle("div"),
+			frame = createEle("div"),			
+			footer = createEle("footer");
 
-        dvContain1.append("menu");
-        myUI.navToggleFunc(tds);
-		dvContain3.append("output");
-	},
-	navToggleFunc: (tds) => {
-		var navToggleBtn = createEle("button");
+        header.innerHTML = "HEADER";
 
-        navToggleBtn.innerHTML = "\u2194";
-        navToggleBtn.className = "navToggleBtn";
-        navToggleBtn.onclick = myUI.doToggle(navToggleBtn, tds);
+		frame.className = "frame";
 
-        dvContain2.append(navToggleBtn);
-	},
-	doToggle: (navToggleBtn, tds) => {
-		return () => {
-console.log(tds);
-		}
+        for (var c = 0; c < clusterNames.length; c++) {
+			var cluster = createEle("p");
+ 
+			cluster.innerHTML = clusterNames[c];
+			cluster.className = "clusters";
+			cluster.id = "cluster_" + c;
 
+			frame.append(cluster);
+        }
+
+        container.className = "container";
+        container.append(frame);
+
+        footer.innerHTML = "FOOTER";
+
+		dvContain.append(header, container, footer);
 	}
 };
 
